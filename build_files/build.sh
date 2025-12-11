@@ -41,7 +41,7 @@ dnf5 install -y fontawesome-fonts-all gnome-themes-extra gnome-icon-theme paper-
 
 
 # sway stuff
-dnf5 install -y sway swaylock swayidle foot
+dnf5 install -y sway swaylock swayidle foot waybar
 
 # Use a COPR Example:
 #
