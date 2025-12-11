@@ -12,6 +12,37 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y tmux 
 
+# launcher
+dnf5 install -y rofi-wayland wofi
+
+# environment
+dnf5 install -y fzf tuned-ppd xorg-x11-server-Xwayland headsetcontrol mediainfo polkit xfce-polkit fprintd-pam xdg-user-dirs dbus-tools dbus-daemon wl-clipboard pavucontrol playerctl qt5-qtwayland qt6-qtwayland vulkan-validation-layers vulkan-tools google-noto-emoji-fonts gnome-disk-utility ddcutil openssl vim just alsa-firmware p7zip distrobox steam-devices
+
+# sound
+dnf5 install -y wireplumber pipewire pamixer pulseaudio-utils
+
+# networking
+dnf5 install -y network-manager-applet NetworkManager-openvpn NetworkManager-openvpn-gnome NetworkManager-openconnect NetworkManager-openconnect-gnome bluez bluez-tools blueman firewall-config
+
+# file manager
+dnf5 install -y thunar thunar-archive-plugin thunar-volman xarchiver imv p7zip gvfs-mtp gvfs-gphoto2 gvfs-smb gvfs-nfs gvfs-fuse gvfs-archive android-tools
+
+# screenshot
+dnf5 install -y slurp grim
+
+# display
+dnf5 install -y wlr-randr wlsunset brightnessctl kanshi
+
+# notifications
+dnf5 install -y dunst
+
+# theme and GUI
+dnf5 install -y fontawesome-fonts-all gnome-themes-extra gnome-icon-theme paper-icon-theme breeze-icon-theme papirus-icon-theme
+
+
+# sway stuff
+dnf5 install -y sway swaylock swayidle foot
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
