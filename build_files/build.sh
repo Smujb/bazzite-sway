@@ -12,17 +12,20 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y tmux
 
-# Install sway spin stuff
+# install sway spin stuff
 dnf5 install -y sway-config-fedora
 
-# Install systemd setup
+# install systemd setup
 dnf5 install -y sway-systemd
 
-# Install runner (rofi)
+# install runner (rofi)
 dnf5 install -y rofi-wayland rofi
 
-# Finally, remove some KDE bloat:
-dnf5 remove -y @kde-desktop
+# install notification server
+dnf5 install -y mako
+
+# install missing screenshare stuff
+dnf5 install -y xdg-desktop-portal-wlr
 
 # Comment out attempt to install everything needed by sway; I'll try Fedora defaults for now
 # launcher
