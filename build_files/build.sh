@@ -28,6 +28,7 @@ dnf5 install -y mako
 dnf5 install -y xdg-desktop-portal-wlr
 
 # install liquidctl and coolercontrol so I don't have to layer them
+dnf5 -y copr enable codifryed/CoolerControl
 dnf5 install -y liquidctl coolercontrol
 
 # Comment out attempt to install everything needed by sway; I'll try Fedora defaults for now
