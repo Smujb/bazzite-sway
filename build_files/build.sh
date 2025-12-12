@@ -27,6 +27,9 @@ dnf5 install -y mako
 # install missing screenshare stuff
 dnf5 install -y xdg-desktop-portal-wlr
 
+# volume control and bluetooth widget stuff
+dnf5 install -y pavucontrol blueman
+
 # install liquidctl and coolercontrol so I don't have to layer them
 dnf5 -y copr enable codifryed/CoolerControl
 dnf5 install -y liquidctl coolercontrol
