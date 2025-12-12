@@ -13,7 +13,7 @@ set -ouex pipefail
 dnf5 install -y tmux
 
 # Install sway spin stuff
-dnf5 install sway-config-fedora
+dnf5 install -y sway-config-fedora
 
 
 # Comment out attempt to install everything needed by sway; I'll try Fedora defaults for now
