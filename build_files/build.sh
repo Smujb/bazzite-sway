@@ -27,8 +27,11 @@ dnf5 install -y mako
 # install missing screenshare stuff
 dnf5 install -y xdg-desktop-portal-wlr
 
-# volume control and bluetooth widget stuff
-dnf5 install -y pavucontrol blueman
+# audio
+dnf5 install -y pavucontrol wireplumber pipewire pamixer pulseaudio-utils
+
+# internet and bluetooth
+dnf5 install -y network-manager-applet NetworkManager-openvpn NetworkManager-openvpn-gnome NetworkManager-openconnect NetworkManager-openconnect-gnome bluez bluez-tools blueman firewall-config
 
 # install liquidctl and coolercontrol so I don't have to layer them
 dnf5 -y copr enable codifryed/CoolerControl
