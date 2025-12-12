@@ -27,6 +27,9 @@ dnf5 install -y mako
 # install missing screenshare stuff
 dnf5 install -y xdg-desktop-portal-wlr
 
+# install liquidctl and coolercontrol so I don't have to layer them
+dnf5 install -y liquidctl coolercontrol
+
 # Comment out attempt to install everything needed by sway; I'll try Fedora defaults for now
 # launcher
 # dnf5 install -y rofi-wayland wofi
