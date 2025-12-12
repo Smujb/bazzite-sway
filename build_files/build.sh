@@ -21,6 +21,9 @@ dnf5 install -y sway-systemd
 # Install runner (rofi)
 dnf5 install -y rofi-wayland rofi
 
+# Finally, remove some KDE bloat:
+dnf5 groupremove -y "KDE Plasma Workspace"
+
 # Comment out attempt to install everything needed by sway; I'll try Fedora defaults for now
 # launcher
 # dnf5 install -y rofi-wayland wofi
