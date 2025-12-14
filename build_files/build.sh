@@ -37,6 +37,9 @@ dnf5 install -y network-manager-applet NetworkManager-openvpn NetworkManager-ope
 dnf5 -y copr enable codifryed/CoolerControl
 dnf5 install -y liquidctl coolercontrol
 
+# install kitty (preferred terminal)
+dnf5 install -y kitty
+
 # Comment out attempt to install everything needed by sway; I'll try Fedora defaults for now
 # launcher
 # dnf5 install -y rofi-wayland wofi
@@ -78,4 +81,4 @@ dnf5 install -y liquidctl coolercontrol
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-systemctl enable coolercontrold
+#systemctl enable coolercontrold
