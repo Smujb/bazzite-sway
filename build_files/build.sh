@@ -40,6 +40,9 @@ dnf5 install -y liquidctl coolercontrol
 # install kitty (preferred terminal)
 dnf5 install -y kitty
 
+# remove some KDE stuff
+dnf5 remove -y kde-* plasma-*
+
 # Comment out attempt to install everything needed by sway; I'll try Fedora defaults for now
 # launcher
 # dnf5 install -y rofi-wayland wofi
