@@ -38,7 +38,8 @@ dnf5 -y copr enable codifryed/CoolerControl
 dnf5 install -y liquidctl coolercontrol
 
 # install kitty (preferred terminal)
-dnf5 install -y kitty
+dnf5 install -y kitty zsh
+chsh -s $(which zsh)
 
 # remove some KDE stuff
 dnf5 remove -y plasma-desktop
