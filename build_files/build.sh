@@ -37,9 +37,8 @@ dnf5 install -y network-manager-applet NetworkManager-openvpn NetworkManager-ope
 dnf5 -y copr enable codifryed/CoolerControl
 dnf5 install -y liquidctl coolercontrol
 
-# install kitty (preferred terminal)
+# install kitty (preferred terminal) and zsh. don't change preferred shell so as not to break anything
 dnf5 install -y kitty zsh
-chsh -s $(which zsh)
 
 # remove some KDE stuff
 dnf5 remove -y plasma-desktop
