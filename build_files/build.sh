@@ -41,7 +41,7 @@ dnf5 install -y liquidctl coolercontrol
 dnf5 install -y kitty zsh
 
 # remove some KDE stuff
-dnf5 remove -y plasma-desktop
+dnf5 remove -y plasma-desktop xwaylandvideobridge
 
 # Comment out attempt to install everything needed by sway; I'll try Fedora defaults for now
 # launcher
