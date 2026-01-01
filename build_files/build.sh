@@ -49,7 +49,7 @@ dnf5 remove -y plasma-desktop xwaylandvideobridge kdebugsettings krfb
 dnf5 remove -y kwrite kate && dnf5 install -y mousepad
 
 # remove kwallet and polkit-kde. lxqt-policykit already installed from the sway group
-dnf5 remove -y kwallet* polkit-kde
+dnf5 remove -y kwallet* ksecret* polkit-kde
 
 # I prefer Dolphin to other file managers so no need to replace that for example
 
