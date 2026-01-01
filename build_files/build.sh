@@ -56,7 +56,7 @@ dnf5 remove -y kwallet* polkit-kde
 ### --- remove other unneeded stuff --- ###
 
 # Remove fcitx (input manager) as sway has built in config stuff for that
-dnf5 remove -y fcitx
+dnf5 remove -y fcitx*
 
 #### Example for enabling a System Unit File
 
