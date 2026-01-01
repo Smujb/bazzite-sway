@@ -37,21 +37,26 @@ dnf5 install -y network-manager-applet NetworkManager-openvpn NetworkManager-ope
 dnf5 -y copr enable codifryed/CoolerControl
 dnf5 install -y liquidctl coolercontrol
 
-# install kitty (preferred terminal) and zsh. don't change preferred shell so as not to break anything
+# install kitty (preferred terminal) and zsh. don't suchange preferred shell so as not to break anything
 dnf5 install -y kitty zsh
 
 ### --- replace some KDE utilities --- ###
 
 # remove some KDE stuff
-dnf5 remove -y plasma-desktop xwaylandvideobridge
+dnf5 remove -y plasma-desktop xwaylandvideobridge kdebugsettings krfb
 
 # Replace kwrite and kate with mousepad
 dnf5 remove -y kwrite kate && dnf5 install -y mousepad
 
-# remove kwallet and polkit-kde for lxqt-policykit
-dnf5 remove -y kwallet polkit-kde && dnf5 install -y lxqt-policykit
+# remove kwallet and polkit-kde. lxqt-policykit already installed from the sway group
+dnf5 remove -y kwallet* polkit-kde
 
 # I prefer Dolphin to other file managers so no need to replace that for example
+
+### --- remove other unneeded stuff --- ###
+
+# Remove fcitx (input manager) as sway has built in config stuff for that
+dnf5 remove -y fcitx
 
 #### Example for enabling a System Unit File
 
