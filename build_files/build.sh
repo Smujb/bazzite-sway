@@ -41,7 +41,7 @@ dnf5 install -y liquidctl coolercontrol
 dnf5 install -y kitty zsh
 
 # Clipboard management packages
-dnf5 install clipman wl-paste
+dnf5 install -y clipman wl-paste
 
 ### --- replace some KDE utilities --- ###
 
