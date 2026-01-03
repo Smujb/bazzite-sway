@@ -40,6 +40,9 @@ dnf5 install -y liquidctl coolercontrol
 # install kitty (preferred terminal) and zsh. don't suchange preferred shell so as not to break anything
 dnf5 install -y kitty zsh
 
+# Clipboard management packages
+dnf5 install clipman wl-paste
+
 ### --- replace some KDE utilities --- ###
 
 # remove some KDE stuff
