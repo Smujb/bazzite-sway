@@ -40,7 +40,7 @@ dnf5 install -y network-manager-applet NetworkManager-openvpn NetworkManager-ope
 # Install the Copr repository manually for your base Fedora release version:
 wget https://copr.fedorainfracloud.org/coprs/codifryed/CoolerControl/repo/fedora-$(rpm -E %fedora)/codifryed-CoolerControl-fedora-$(rpm -E %fedora).repo
 mv codifryed-CoolerControl-fedora-$(rpm -E %fedora).repo /etc/yum.repos.d/
-dnf5 -y refresh-md
+dnf5 -y upgrade --refresh
 dnf5 -y install coolercontrol
 # reboot is required for changes to take effect
 systemctl enable --now coolercontrold
