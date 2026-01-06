@@ -33,10 +33,9 @@ dnf5 install -y pavucontrol wireplumber pipewire pamixer pulseaudio-utils
 # internet and bluetooth
 dnf5 install -y network-manager-applet NetworkManager-openvpn NetworkManager-openvpn-gnome NetworkManager-openconnect NetworkManager-openconnect-gnome bluez bluez-tools blueman firewall-config
 
-# never mind, none of this works.
 # install liquidctl and coolercontrol so I don't have to layer them
-# dnf5 -y copr enable codifryed/CoolerControl
-# dnf5 install -y liquidctl coolercontrol
+dnf5 -y copr enable codifryed/CoolerControl
+dnf5 install -y liquidctl coolercontrold coolercontrol
 # Try installing the same way the Bazzite ujust does:
 # Install the Copr repository manually for your base Fedora release version:
 # wget https://copr.fedorainfracloud.org/coprs/codifryed/CoolerControl/repo/fedora-$(rpm -E %fedora)/codifryed-CoolerControl-fedora-$(rpm -E %fedora).repo
@@ -71,4 +70,4 @@ dnf5 remove -y fcitx*
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-#systemctl enable coolercontrold
+systemctl enable coolercontrold
