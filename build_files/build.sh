@@ -32,6 +32,9 @@ dnf5 remove -y fcitx*
 # install sway spin stuff
 dnf5 install -y sway-config-fedora
 
+# Setup SDDM
+dnf5 install -y sddm sddm-themes
+
 # install systemd setup
 dnf5 install -y sway-systemd
 
@@ -67,3 +70,4 @@ dnf5 install -y clipman wl-paste
 
 systemctl enable podman.socket
 systemctl enable coolercontrold
+systemctl enable sddm
