@@ -52,7 +52,7 @@ dnf5 install -y clipman wl-paste
 dnf5 remove -y plasma-* xwaylandvideobridge kdebugsettings krfb kwin*
 
 # Try greetd login manager
-dnf5 install -y greetd
+dnf5 install -y gtkgreet greetd
 systemctl enable greetd.service
 
 # Replace kwrite and kate with mousepad
