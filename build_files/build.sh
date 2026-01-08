@@ -36,12 +36,9 @@ dnf5 install -y network-manager-applet NetworkManager-openvpn NetworkManager-ope
 # install liquidctl and coolercontrol so I don't have to layer them
 dnf5 -y copr enable codifryed/CoolerControl
 dnf5 install -y liquidctl coolercontrold coolercontrol
-# Try installing the same way the Bazzite ujust does:
-# Install the Copr repository manually for your base Fedora release version:
-# wget https://copr.fedorainfracloud.org/coprs/codifryed/CoolerControl/repo/fedora-$(rpm -E %fedora)/codifryed-CoolerControl-fedora-$(rpm -E %fedora).repo
-# mv codifryed-CoolerControl-fedora-$(rpm -E %fedora).repo /etc/yum.repos.d/
-# dnf5 -y install coolercontrol liquidctl
-# systemctl enable --now coolercontrold
+
+# Test, will fail but I need to see what depends on it:
+dnf5 remove -y kf6-*
 
 # install kitty (preferred terminal) and zsh. don't suchange preferred shell so as not to break anything
 dnf5 install -y kitty zsh
