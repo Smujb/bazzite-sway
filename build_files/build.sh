@@ -30,7 +30,7 @@ dnf5 remove -y fcitx*
 ### --- my desired packages (sway, etc) --- #
 
 # Setup SDDM as it was removed earlier
-dnf5 install -y sddm sddm-themes
+dnf5 install -y sddm sddm-themes sddm-wayland-sway
 
 # install sway spin stuff
 dnf5 install -y sway-config-fedora
