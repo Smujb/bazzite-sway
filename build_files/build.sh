@@ -9,8 +9,25 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-dnf5 install -y tmux
+### --- replace some KDE utilities --- ###
+
+# remove some KDE stuff
+dnf5 remove -y plasma-* xwaylandvideobridge kdebugsettings krfb kwin*
+
+# Replace kwrite and kate with mousepad
+dnf5 remove -y kwrite kate && dnf5 install -y mousepad
+
+# remove kwallet and polkit-kde. lxqt-policykit already installed from the sway group
+dnf5 remove -y kwallet* ksecret* polkit-kde
+
+# I prefer Dolphin to other file managers so no need to replace that for example
+
+### --- remove other unneeded stuff --- ###
+
+# Remove fcitx (input manager) as sway has built in config stuff for that
+dnf5 remove -y fcitx*
+
+### --- my desired packages (sway, etc) --- #
 
 # install sway spin stuff
 dnf5 install -y sway-config-fedora
@@ -45,28 +62,6 @@ dnf5 install -y kitty zsh
 
 # Clipboard management packages
 dnf5 install -y clipman wl-paste
-
-### --- replace some KDE utilities --- ###
-
-# remove some KDE stuff
-dnf5 remove -y plasma-* xwaylandvideobridge kdebugsettings krfb kwin*
-
-# Try greetd login manager
-dnf5 install -y gtkgreet greetd
-systemctl enable greetd.service
-
-# Replace kwrite and kate with mousepad
-dnf5 remove -y kwrite kate && dnf5 install -y mousepad
-
-# remove kwallet and polkit-kde. lxqt-policykit already installed from the sway group
-dnf5 remove -y kwallet* ksecret* polkit-kde
-
-# I prefer Dolphin to other file managers so no need to replace that for example
-
-### --- remove other unneeded stuff --- ###
-
-# Remove fcitx (input manager) as sway has built in config stuff for that
-dnf5 remove -y fcitx*
 
 #### Example for enabling a System Unit File
 
