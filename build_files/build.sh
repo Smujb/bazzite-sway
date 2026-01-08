@@ -33,7 +33,7 @@ dnf5 remove -y fcitx*
 dnf5 install -y sway-config-fedora
 
 # Setup SDDM as it was removed earlier
-dnf5 install -y sddm sddm-themes sddm-wayland-sway --setopt install_weak_deps=true
+dnf5 install -y sddm sddm-themes sddm-wayland-sway qt5-qtgraphicaleffects qt5-qtquickcontrols2 qt5-qtsvg
 
 # install systemd setup
 dnf5 install -y sway-systemd
