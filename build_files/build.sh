@@ -49,7 +49,10 @@ dnf5 install -y clipman wl-paste
 ### --- replace some KDE utilities --- ###
 
 # remove some KDE stuff
-dnf5 remove -y plasma-* xwaylandvideobridge kdebugsettings krfb kwin* -x sddm
+dnf5 remove -y plasma-* xwaylandvideobridge kdebugsettings krfb kwin*
+
+# Reinstall sddm without KDE integration
+dnf5 install -y sddm
 
 # Replace kwrite and kate with mousepad
 dnf5 remove -y kwrite kate && dnf5 install -y mousepad
