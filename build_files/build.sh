@@ -37,8 +37,8 @@ dnf5 install -y network-manager-applet NetworkManager-openvpn NetworkManager-ope
 dnf5 -y copr enable codifryed/CoolerControl
 dnf5 install -y liquidctl coolercontrold coolercontrol
 
-# Test, will fail but I need to see what depends on it:
-dnf5 remove -y kf6-*
+# Test, will fail but I need to see what depends on it
+# dnf5 remove kf6-*
 
 # install kitty (preferred terminal) and zsh. don't suchange preferred shell so as not to break anything
 dnf5 install -y kitty zsh
@@ -49,7 +49,7 @@ dnf5 install -y clipman wl-paste
 ### --- replace some KDE utilities --- ###
 
 # remove some KDE stuff
-dnf5 remove -y plasma-desktop xwaylandvideobridge kdebugsettings krfb
+dnf5 remove -y plasma-* xwaylandvideobridge kdebugsettings krfb kwin*
 
 # Replace kwrite and kate with mousepad
 dnf5 remove -y kwrite kate && dnf5 install -y mousepad
