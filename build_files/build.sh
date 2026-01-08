@@ -36,7 +36,7 @@ dnf5 install -y sway-config-fedora
 dnf5 install -y sddm sddm-themes sddm-wayland-sway
 
 # Install dark theme stuff
-dnf5 install -y gnome-themes-extra adwaita-gtk2-theme
+dnf5 install -y gnome-themes-extra adwaita-gtk2-theme adwaita-qt
 
 # install systemd setup
 dnf5 install -y sway-systemd
