@@ -51,8 +51,9 @@ dnf5 install -y clipman wl-paste
 # remove some KDE stuff
 dnf5 remove -y plasma-* xwaylandvideobridge kdebugsettings krfb kwin*
 
-# Reinstall sddm without KDE integration
-dnf5 install -y sddm
+# Try greetd login manager
+dnf5 install -y greetd
+systemctl enable greetd.service
 
 # Replace kwrite and kate with mousepad
 dnf5 remove -y kwrite kate && dnf5 install -y mousepad
