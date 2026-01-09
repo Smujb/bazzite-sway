@@ -36,7 +36,7 @@ dnf5 install -y sway-config-fedora
 dnf5 install -y sddm sddm-themes sddm-wayland-sway
 
 # Install dark theme stuff
-dnf5 install -y gnome-themes-extra adwaita-gtk2-theme qt6ct nwg-look
+dnf5 install -y gnome-themes-extra adwaita-gtk2-theme qt6ct
 
 # install systemd setup
 dnf5 install -y sway-systemd
@@ -60,14 +60,15 @@ dnf5 install -y network-manager-applet NetworkManager-openvpn NetworkManager-ope
 dnf5 -y copr enable codifryed/CoolerControl
 dnf5 install -y liquidctl coolercontrold coolercontrol
 
-# Test, will fail but I need to see what depends on it
-# dnf5 remove kf6-*
-
 # install kitty (preferred terminal) and zsh. don't suchange preferred shell so as not to break anything
 dnf5 install -y kitty zsh
 
 # Clipboard management packages
 dnf5 install -y clipman wl-paste
+
+# NWG Shell for nwg-look (theme customization)
+dnf5 -y copr enable tofik/nwg-shell 
+dnf5 -y install nwg-look
 
 #### Example for enabling a System Unit File
 
