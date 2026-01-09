@@ -64,8 +64,8 @@ dnf5 install -y kitty zsh
 dnf5 install -y clipman wl-paste
 
 # Install dark theme stuff for:
-dnf5 install -y gnome-themes-extra # GTK apps
-dnf5 install -y adwaita-gtk2-theme qt6ct kf6-kcolorscheme # QT apps
+dnf5 install -y gnome-themes-extra adwaita-gtk2-theme  # GTK apps
+dnf5 install -y qt6ct kvantum # QT apps (kvantum for extra themes)
 
 # NWG Shell for nwg-look (theme customization for GTK apps)
 dnf5 -y copr enable tofik/nwg-shell 
