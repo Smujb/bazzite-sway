@@ -35,9 +35,6 @@ dnf5 install -y sway-config-fedora
 # Setup SDDM as it was removed earlier
 dnf5 install -y sddm sddm-themes sddm-wayland-sway
 
-# Install dark theme stuff
-dnf5 install -y gnome-themes-extra adwaita-gtk2-theme qt6ct
-
 # install systemd setup
 dnf5 install -y sway-systemd
 
@@ -66,7 +63,11 @@ dnf5 install -y kitty zsh
 # Clipboard management packages
 dnf5 install -y clipman wl-paste
 
-# NWG Shell for nwg-look (theme customization)
+# Install dark theme stuff for:
+dnf5 install -y gnome-themes-extra # GTK apps
+dnf5 install -y adwaita-gtk2-theme qt6ct kf6-kcolorscheme # QT apps
+
+# NWG Shell for nwg-look (theme customization for GTK apps)
 dnf5 -y copr enable tofik/nwg-shell 
 dnf5 -y install nwg-look
 
