@@ -29,6 +29,11 @@ dnf5 remove -y fcitx*
 
 ### --- my desired packages (sway, etc) --- #
 
+# Install swayfx
+dnf5 -y copr enable swayfx/swayfx
+dnf5 install -y swayfx
+dnf5 -y copr disable swayfx/swayfx
+
 # install sway spin stuff
 dnf5 install -y sway-config-fedora
 
@@ -56,6 +61,7 @@ dnf5 install -y network-manager-applet NetworkManager-openvpn NetworkManager-ope
 # install liquidctl and coolercontrol so I don't have to layer them
 dnf5 -y copr enable codifryed/CoolerControl
 dnf5 install -y liquidctl coolercontrold coolercontrol
+dnf5 -y copr disable codifryed/CoolerControl # Disable copr to avoid clogging the system
 
 # install kitty (preferred terminal) and zsh. don't suchange preferred shell so as not to break anything
 dnf5 install -y kitty zsh
