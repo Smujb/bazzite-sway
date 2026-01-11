@@ -29,11 +29,6 @@ dnf5 remove -y fcitx*
 
 ### --- my desired packages (sway, etc) --- #
 
-# Install swayfx
-dnf5 -y copr enable swayfx/swayfx
-dnf5 install -y swayfx
-dnf5 -y copr disable swayfx/swayfx
-
 # install sway spin stuff
 dnf5 install -y sway-config-fedora
 
