@@ -68,10 +68,9 @@ dnf5 install -y clipman wl-paste
 dnf5 install -y gnome-themes-extra adwaita-gtk2-theme  # GTK apps
 dnf5 install -y qt6ct kvantum # QT apps (kvantum for extra themes)
 
-# NWG Shell for nwg-look (theme customization for GTK apps)
+# NWG Shell for nwg-look and azote (theme customization for GTK apps, wallpapers)
 dnf5 -y copr enable tofik/nwg-shell 
-dnf5 -y install nwg-look
-
+dnf5 -y install nwg-look azote
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
