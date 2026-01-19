@@ -71,6 +71,43 @@ dnf5 install -y qt6ct kvantum # QT apps (kvantum for extra themes)
 # NWG Shell for nwg-look and azote (theme customization for GTK apps, wallpapers)
 dnf5 -y copr enable tofik/nwg-shell 
 dnf5 -y install nwg-look azote
+
+### --- add bazzite-dx packages without using bazzite-dx as a base --- ###
+
+dnf5 install -y \
+    android-tools \
+    bcc \
+    bpftop \
+    bpftrace \
+    ccache \
+    flatpak-builder \
+    git-subtree \
+    nicstat \
+    numactl \
+    podman-machine \
+    podman-tui \
+    python3-ramalama \
+    qemu-kvm \
+    restic \
+    rclone \
+    sysprof \
+    tiptop \
+    usbmuxd
+
+# Install VS Codium
+tee /etc/yum.repos.d/vscodium.repo << 'EOF'
+[vscodium]
+name=VSCodium
+baseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/
+enabled=1
+gpgcheck=1
+repo_gpgcheck=0
+gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+metadata_expire=1h
+EOF
+
+dnf5 install -y codium
+
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
