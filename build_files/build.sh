@@ -9,7 +9,10 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
+### --- remove gnome --- ####
+
 dnf5 -y remove *gnome* --exclude gnome-disk-utility
+
 ### --- remove other unneeded stuff --- ###
 
 # Remove fcitx (input manager) as sway has built in config stuff for that
@@ -64,7 +67,7 @@ dnf5 -y install nwg-look azote
 dnf5 -y install mousepad
 
 # preferred file manager
-dnf5 -y install dolphin
+dnf5 -y install thunar
 
 ### --- add bazzite-dx packages without using bazzite-dx as a base --- ###
 
