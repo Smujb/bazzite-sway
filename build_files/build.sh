@@ -9,21 +9,7 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-dnf5 -y remove *gnome*
-
-### --- replace some KDE utilities --- ###
-
-# remove some KDE stuff
-#dnf5 remove -y plasma-* xwaylandvideobridge kdebugsettings krfb kwin*
-
-# Replace kwrite and kate with mousepad
-#dnf5 remove -y kwrite kate && dnf5 install -y mousepad
-
-# remove kwallet and polkit-kde. lxqt-policykit already installed from the sway group
-#dnf5 remove -y kwallet* ksecret* polkit-kde
-
-# I prefer Dolphin to other file managers so no need to replace that for example
-
+dnf5 -y remove *gnome* --exclude gnome-disk-utility
 ### --- remove other unneeded stuff --- ###
 
 # Remove fcitx (input manager) as sway has built in config stuff for that
@@ -73,6 +59,12 @@ dnf5 install -y qt6ct kvantum # QT apps (kvantum for extra themes)
 # NWG Shell for nwg-look and azote (theme customization for GTK apps, wallpapers)
 dnf5 -y copr enable tofik/nwg-shell 
 dnf5 -y install nwg-look azote
+
+# preferred text editor
+dnf5 -y install mousepad
+
+# preferred file manager
+dnf5 -y install dolphin
 
 ### --- add bazzite-dx packages without using bazzite-dx as a base --- ###
 
