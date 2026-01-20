@@ -9,16 +9,18 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
+dnf5 -y remove *gnome*
+
 ### --- replace some KDE utilities --- ###
 
 # remove some KDE stuff
-dnf5 remove -y plasma-* xwaylandvideobridge kdebugsettings krfb kwin*
+#dnf5 remove -y plasma-* xwaylandvideobridge kdebugsettings krfb kwin*
 
 # Replace kwrite and kate with mousepad
-dnf5 remove -y kwrite kate && dnf5 install -y mousepad
+#dnf5 remove -y kwrite kate && dnf5 install -y mousepad
 
 # remove kwallet and polkit-kde. lxqt-policykit already installed from the sway group
-dnf5 remove -y kwallet* ksecret* polkit-kde
+#dnf5 remove -y kwallet* ksecret* polkit-kde
 
 # I prefer Dolphin to other file managers so no need to replace that for example
 
