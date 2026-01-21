@@ -6,6 +6,12 @@ COPY build_files /
 FROM ghcr.io/ublue-os/bazzite-gnome:stable
 
 ARG IMAGE_NAME="bazzite-sway"
+ARG IMAGE_VENDOR="ublue-os, JayB"
+ARG IMAGE_REF="ostree-image-signed:docker://ghcr.io/smujb/bazzite-sway"
+ARG IMAGE_BRANCH="${IMAGE_BRANCH:-stable}"
+ARG BASE_IMAGE_NAME="silverblue"
+ARG VERSION_TAG="${VERSION_TAG}"
+ARG VERSION_PRETTY="${VERSION_PRETTY}"
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
