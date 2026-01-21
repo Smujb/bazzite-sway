@@ -11,7 +11,7 @@ set -ouex pipefail
 
 ### --- remove gnome --- ####
 
-dnf5 -y remove *gnome* --exclude gnome-disk-utility
+dnf5 -y remove *gnome* *mutter* --exclude=gnome-disk-utility,lutris,gnome-desktop3 # Exclude Disks, Lutris, and gnome desktop 3 which Lutris requires
 
 ### --- remove other unneeded stuff --- ###
 
@@ -133,7 +133,5 @@ cat > $IMAGE_INFO <<EOF
   "version-pretty": "$VERSION_PRETTY"
 }
 EOF
-
-cat $IMAGE_INFO
 
 sed -i "s/^VARIANT_ID=.*/VARIANT_ID=$IMAGE_NAME/" /usr/lib/os-release
