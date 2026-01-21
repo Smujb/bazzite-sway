@@ -108,8 +108,11 @@ EOF
 
 dnf5 install -y codium
 
-### -- enable system unit files --- ###
+### --- enable system unit files --- ###
 
 systemctl enable podman.socket
 systemctl enable coolercontrold
 systemctl enable sddm
+
+### --- change build ID --- ###
+sed -i "s/^VARIANT_ID=.*/VARIANT_ID=$IMAGE_NAME/" /usr/lib/os-release
