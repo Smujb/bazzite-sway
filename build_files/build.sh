@@ -66,8 +66,8 @@ dnf5 -y install nwg-look azote
 # preferred text editor
 dnf5 -y install mousepad
 
-# preferred file manager
-dnf5 -y install thunar
+# preferred file manager and archive tool
+dnf5 -y install thunar thunar-archive-plugin
 
 ### --- add bazzite-dx packages without using bazzite-dx as a base --- ###
 
@@ -105,7 +105,7 @@ EOF
 
 dnf5 install -y codium
 
-#### Example for enabling a System Unit File
+### -- enable system unit files --- ###
 
 systemctl enable podman.socket
 systemctl enable coolercontrold
