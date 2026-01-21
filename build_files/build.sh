@@ -66,8 +66,11 @@ dnf5 -y install nwg-look azote
 # preferred text editor
 dnf5 -y install mousepad
 
-# preferred file manager and archive tool
+# preferred file manager and archive plugin
 dnf5 -y install thunar thunar-archive-plugin
+
+# preferred archive tool
+dnf5 -y install file-roller
 
 ### --- add bazzite-dx packages without using bazzite-dx as a base --- ###
 
