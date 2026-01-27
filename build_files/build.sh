@@ -23,8 +23,11 @@ dnf5 remove -y fcitx*
 # install sway spin stuff
 dnf5 install -y sway-config-fedora
 
-# Setup SDDM as it was removed earlier
+# install SDDM and sway integration
 dnf5 install -y sddm sddm-themes sddm-wayland-sway
+
+# install wlogout
+dnf5 install -y wlogout
 
 # install systemd setup
 dnf5 install -y sway-systemd
@@ -55,13 +58,14 @@ dnf5 install -y kitty zsh
 # Clipboard management packages
 dnf5 install -y clipman wl-paste
 
-# Install dark theme stuff for:
+# install dark theme stuff for:
 dnf5 install -y gnome-themes-extra adwaita-gtk2-theme  # GTK apps
 dnf5 install -y qt6ct kvantum # QT apps (kvantum for extra themes)
 
 # NWG Shell for nwg-look and azote (theme customization for GTK apps, wallpapers)
 dnf5 -y copr enable tofik/nwg-shell 
 dnf5 -y install nwg-look azote
+dnf5 -y copr disable tofik/nwg-shell 
 
 # preferred text editor
 dnf5 -y install mousepad
