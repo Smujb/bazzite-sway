@@ -11,7 +11,7 @@ set -ouex pipefail
 
 ### --- remove gnome --- ####
 
-dnf5 -y remove *gnome* *gdm* --exclude=gnome-disk-utility,lutris,gnome-desktop3 # Exclude Disks, Lutris, and gnome desktop 3 which Lutris requires
+dnf5 -y remove *gnome* *gdm* openssh-askpass --exclude=gnome-disk-utility,lutris,gnome-desktop3 # Exclude Disks, Lutris, and gnome desktop 3 which Lutris requires
 
 ### --- remove other unneeded stuff --- ###
 
