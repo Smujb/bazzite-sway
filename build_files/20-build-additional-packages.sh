@@ -11,7 +11,7 @@ SWAYWSR_LOCATION="/usr/share/swaywsr/tmp"
 
 # Install dependencies
 dnf5 -y install cargo
-rm -rf /root # Installing cargo seems to create a phantom /root directory
+rm /root # Installing cargo seems to create a phantom /root directory
 
 # Create a temporary directory for storing build files and download the repo
 mkdir -p $SWAYWSR_LOCATION && cd $SWAYWSR_LOCATION
