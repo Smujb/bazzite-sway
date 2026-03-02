@@ -11,7 +11,7 @@ SWAYWSR_LOCATION="/usr/share/swaywsr/tmp"
 
 # Install dependencies
 dnf5 -y install cargo
-rm /root # Root is sym linked to /var/roothome, must remove it and then re-add it later
+mkdir -p /var/roothome # Root is sym linked to /var/roothome, must ensure this exists during the build process
 
 # Create a temporary directory for storing build files and download the repo
 mkdir -p $SWAYWSR_LOCATION && cd $SWAYWSR_LOCATION
@@ -28,9 +28,6 @@ cp $SWAYWSR_LOCATION/swaywsr/target/release/swaywsr /usr/bin/swaywsr
 cd /
 dnf5 -y remove cargo
 rm -rf $SWAYWSR_LOCATION
-
-# Re-create /var/roothome as writeable in the final image
-rm -rf /root && ln -s /root /var/roothome
 
 ### --- still --- ###
 STILL_LOCATION="/usr/share/still/tmp"
