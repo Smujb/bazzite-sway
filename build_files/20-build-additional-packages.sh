@@ -6,12 +6,15 @@ set -ouex pipefail
 echo "::group::Executing build-additional-packages"
 trap 'echo "::endgroup::"' EXIT
 
-### --- swaywsr --- ###
+### --- rust packages (swaywsr and autotiling-rs) --- ###
 SWAYWSR_LOCATION="/usr/share/swaywsr/tmp"
+AUTOTILING_LOCATION="/usr/share/autotiling-rs/tmp"
 
 # Install dependencies
 dnf5 -y install cargo
 mkdir -p /var/roothome # Root is sym linked to /var/roothome, must ensure this exists during the build process
+
+### swaywsr
 
 # Create a temporary directory for storing build files and download the repo
 mkdir -p $SWAYWSR_LOCATION && cd $SWAYWSR_LOCATION
@@ -24,10 +27,24 @@ cargo build --release
 # Copy it out of the build directory
 cp $SWAYWSR_LOCATION/swaywsr/target/release/swaywsr /usr/bin/swaywsr
 
-# Cleanup
+### autotilling-rs
+
+# Create a temporary directory for storing build files and download the repo
+mkdir -p $AUTOTILING_LOCATION && cd $AUTOTILING_LOCATION
+git clone https://github.com/ammgws/autotiling-rs.git
+
+# Build autotiling-rs
+cd autotiling-rs
+cargo build --release
+
+# Copy it out of the build directory
+cp $AUTOTILING_LOCATION/autotiling-rs/target/release/autotiling-rs /usr/bin/autotiling-rs
+
+### Cleanup
 cd /
 dnf5 -y remove cargo
 rm -rf $SWAYWSR_LOCATION
+rm -rf $AUTOTILING_LOCATION
 
 ### --- still --- ###
 STILL_LOCATION="/usr/share/still/tmp"
