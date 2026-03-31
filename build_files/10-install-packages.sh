@@ -44,7 +44,7 @@ dnf5 -y copr disable codifryed/CoolerControl # Disable copr to avoid clogging th
 dnf5 install -y kitty zsh
 
 # Clipboard management packages
-dnf5 install -y clipman wl-paste
+dnf5 install -y clipman wl-paste wtype
 
 # install dark theme stuff for:
 dnf5 install -y gnome-themes-extra adwaita-gtk2-theme  # GTK apps
