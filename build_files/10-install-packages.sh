@@ -84,7 +84,8 @@ dnf5 install -y \
     rclone \
     sysprof \
     tiptop \
-    usbmuxd
+    usbmuxd \
+    neovim
 
 # Install VS Codium
 tee /etc/yum.repos.d/vscodium.repo << 'EOF'
