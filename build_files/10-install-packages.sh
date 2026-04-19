@@ -4,7 +4,7 @@ set -ouex pipefail
 
 ### --- remove gnome --- ####
 
-dnf5 -y remove *gnome* *gdm* ptyxis openssh-askpass --exclude=gnome-disk-utility,lutris,gnome-desktop3,gnome-keyring # Exclude Disks, Lutris, and gnome desktop 3 which Lutris requires
+dnf5 -y remove *gnome* *gdm* ptyxis openssh-askpass --exclude=gnome-disk-utility,lutris,gnome-desktop3,gnome-keyring,gnome-keyring-pam # Exclude Disks, Lutris, Gnome keyring and gnome desktop 3 which Lutris requires
 
 ### --- my desired packages (sway, etc) --- #
 
