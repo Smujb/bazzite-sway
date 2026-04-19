@@ -25,4 +25,4 @@ EOF
 sed -i "s/^VARIANT_ID=.*/VARIANT_ID=$IMAGE_NAME/" /usr/lib/os-release
 
 # Clean up any unneeded packages
-sudo dnf autoremove
+dnf5 -y autoremove
