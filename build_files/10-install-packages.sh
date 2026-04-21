@@ -78,6 +78,7 @@ dnf5 install -y \
     numactl \
     podman-machine \
     podman-tui \
+    podman-compose \
     python3-ramalama \
     qemu-kvm \
     restic \
