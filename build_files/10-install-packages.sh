@@ -46,8 +46,9 @@ dnf5 install -y kitty zsh
 # Clipboard management packages
 dnf5 install -y clipman wl-paste wtype
 
-# install dark theme stuff for:
-dnf5 install -y gnome-themes-extra adwaita-gtk2-theme  # GTK apps
+# these gnome themes have been dropped in Fedora 44. will see if I need to replace them.
+# dnf5 install -y gnome-themes-extra adwaita-gtk2-theme  # GTK apps
+# I should also probably replace kvantum with some better theme options
 dnf5 install -y qt6ct kvantum # QT apps (kvantum for extra themes)
 
 # NWG Shell for nwg-look and azote (theme customization for GTK apps, wallpapers)
