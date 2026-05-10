@@ -56,14 +56,12 @@ dnf5 -y copr enable tofik/nwg-shell
 dnf5 -y install nwg-look azote
 dnf5 -y copr disable tofik/nwg-shell 
 
-# preferred text editor
-dnf5 -y install mousepad
-
-# preferred file manager and archive plugin
-dnf5 -y install thunar thunar-archive-plugin
+# desktop utilities
+dnf5 -y install pcmanfm-qt lxqt-archiver lximage-qt
+# dnf5 -y install thunar thunar-archive-plugin
 
 # preferred archive tool
-dnf5 -y install file-roller
+# dnf5 -y install file-roller
 
 ### --- add bazzite-dx packages without using bazzite-dx as a base --- ###
 
@@ -86,8 +84,7 @@ dnf5 install -y \
     rclone \
     sysprof \
     tiptop \
-    usbmuxd \
-    neovim
+    usbmuxd
 
 # Install VS Codium
 tee /etc/yum.repos.d/vscodium.repo << 'EOF'
