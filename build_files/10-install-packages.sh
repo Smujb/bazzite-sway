@@ -52,16 +52,15 @@ dnf5 install -y clipman wl-paste wtype
 dnf5 install -y qt6ct lxqt-themes # QT apps (lxqt-themes for extra themes)
 
 # NWG Shell for nwg-look and azote (theme customization for GTK apps, wallpapers)
-dnf5 -y copr enable tofik/nwg-shell 
-dnf5 -y install nwg-look azote
-dnf5 -y copr disable tofik/nwg-shell 
+# dnf5 -y copr enable tofik/nwg-shell 
+# dnf5 -y install nwg-look azote
+# dnf5 -y copr disable tofik/nwg-shell 
 
 # desktop utilities
-dnf5 -y install pcmanfm-qt lxqt-archiver lximage-qt
-# dnf5 -y install thunar thunar-archive-plugin
+dnf5 -y install thunar thunar-archive-plugin
 
 # preferred archive tool
-# dnf5 -y install file-roller
+dnf5 -y install file-roller
 
 ### --- add bazzite-dx packages without using bazzite-dx as a base --- ###
 
