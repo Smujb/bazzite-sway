@@ -44,7 +44,7 @@ dnf5 -y copr disable codifryed/CoolerControl # Disable copr to avoid clogging th
 dnf5 install -y kitty zsh
 
 # Clipboard management packages
-dnf5 install -y clipman wl-paste wtype
+dnf5 install -y cliphist wl-paste wtype
 
 # these gnome themes have been dropped in Fedora 44. will see if I need to replace them.
 # dnf5 install -y gnome-themes-extra adwaita-gtk2-theme  # GTK apps
